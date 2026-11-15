@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport"/>
+<meta content="#3A5C1E" name="theme-color"/>
+<title>B05 — Menu · Lebanese Cuisine Valencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #F1F1E6;
+      --bg2: #EAEADB;
+      --bg3: #E2E2D2;
+      --border: #C8C8AA;
+      --green: #3A5C1E;
+      --green-dk: #2A4414;
+      --green-lt: #567A2E;
+      --muted: #7A8A65;
+      --muted2: #9AAA88;
+      --gold: #C8A84A;
+      --f: 'Public Sans', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--green);
+      font-family: var(--f);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 24px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%)
+    }
+
+    .hero-eye {
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(241, 241, 230, 0.4);
+      margin-bottom: 16px;
+      font-weight: 600
+    }
+
+    .hero-logo {
+      font-size: 96px;
+      font-weight: 800;
+      color: var(--bg);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 10px
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(241, 241, 230, 0.55);
+      padding-bottom: 16px
+    }
+
+    /* ── LANG BAR ── */
+    .lang {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 200
+    }
+
+    .lb {
+      font-family: var(--f);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 30px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .18s
+    }
+
+    .lb.on,
+    .lb:hover {
+      background: var(--green);
+      color: var(--bg);
+      border-color: var(--green)
+    }
+
+    /* ── CONTENT ── */
+    .wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 0 100px
+    }
+
+    /* ── SECTION ── */
+    .sec {
+      padding: 40px 20px 0
+    }
+
+    .sec-hd {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px
+    }
+
+    .sec-ln {
+      flex: 1;
+      height: 1px;
+      background: var(--border)
+    }
+
+    .sec-tt {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--green);
+      white-space: nowrap
+    }
+
+    .sec-note {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 4px
+    }
+
+    .sec-items {
+      margin-top: 16px
+    }
+
+    /* ── ITEM ── */
+    .it {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .it:last-child {
+      border-bottom: none
+    }
+
+    .it-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px
+    }
+
+    .it-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1.15;
+      flex: 1
+    }
+
+    .it-price {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--green-lt);
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .it-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65
+    }
+
+    /* ── VARIANTS ── */
+    .vars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px
+    }
+
+    .var {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .var-l {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: .3px
+    }
+
+    .var-p {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--green)
+    }
+
+    /* ── EXTRAS BOX ── */
+    .extras {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 16px 0
+    }
+
+    .extras-tt {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin-bottom: 12px
+    }
+
+    .extras-g {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .ex {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 4px 0
+    }
+
+    .ex-n {
+      color: var(--green);
+      font-weight: 400
+    }
+
+    .ex-p {
+      color: var(--green-lt);
+      font-weight: 600
+    }
+
+    /* ── EXPERIENCE CARDS ── */
+    .exp {
+      background: var(--green);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .exp::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: rgba(241, 241, 230, 0.15)
+    }
+
+    .exp-badge {
+      display: inline-block;
+      background: rgba(241, 241, 230, 0.12);
+      border: 1px solid rgba(241, 241, 230, 0.2);
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(241, 241, 230, 0.5);
+      padding: 4px 10px;
+      margin-bottom: 12px
+    }
+
+    .exp-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--bg);
+      line-height: 1.1;
+      margin-bottom: 4px
+    }
+
+    .exp-price {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(241, 241, 230, 0.5);
+      margin-bottom: 18px
+    }
+
+    .exp-sep {
+      height: 1px;
+      background: rgba(241, 241, 230, 0.12);
+      margin-bottom: 18px
+    }
+
+    .exp-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(241, 241, 230, 0.75);
+      line-height: 2
+    }
+
+    .exp-body strong {
+      color: var(--bg);
+      font-weight: 700
+    }
+
+    /* ── TAPAS NOTE ── */
+    .tapas-banner {
+      background: var(--green-dk);
+      color: var(--bg);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .3px
+    }
+
+    .tapas-banner span {
+      display: block;
+      font-size: 11px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(241, 241, 230, 0.55);
+      margin-top: 3px
+    }
+
+    /* ── DRINK ITEMS ── */
+    .dk {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px
+    }
+
+    .dk:last-child {
+      border-bottom: none
+    }
+
+    .dk-n {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--green);
+      flex: 1
+    }
+
+    .dk-d {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .dk-p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-lt);
+      white-space: nowrap
+    }
+
+    /* ── ALLERGEN ── */
+    .allrg {
+      margin: 32px 20px 0;
+      padding: 14px 18px;
+      border: 1.5px solid #C8A070;
+      border-radius: 10px;
+      background: #FAF0E0;
+      font-size: 12px;
+      color: #8A5018;
+      line-height: 1.7;
+      text-align: center
+    }
+
+    .allrg strong {
+      font-weight: 700
+    }
+
+    /* ── FOOTER ── */
+    .foot {
+      padding: 32px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      background: var(--bg2)
+    }
+
+    .foot-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px
+    }
+
+    .foot-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .3px
+    }
+
+    .foot-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border: 2px solid var(--green);
+      border-radius: 50px
+    }
+
+    .foot-copy {
+      font-size: 11px;
+      color: var(--muted2);
+      letter-spacing: 1.5px;
+      text-transform: uppercase
+    }
+
+    /* ── INDEX ── */
+    .ix-hero {
+      background: var(--green);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .ix-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%)
+    }
+
+    .ix-logo {
+      font-size: 110px;
+      font-weight: 800;
+      color: var(--bg);
+      line-height: 1;
+      letter-spacing: -5px
+    }
+
+    .ix-sub {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(241, 241, 230, 0.5);
+      margin-top: 8px;
+      padding-bottom: 20px
+    }
+
+    .ix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 28px 20px 16px
+    }
+
+    .ix-card {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 16px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--green);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s
+    }
+
+    .ix-card:active {
+      background: var(--green);
+      color: var(--bg);
+      border-color: var(--green)
+    }
+
+    .ix-card-flag {
+      font-size: 34px
+    }
+
+    .ix-card-name {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .ix-card-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .ix-card:active .ix-card-sub {
+      color: rgba(241, 241, 230, 0.55)
+    }
+
+    .ix-full {
+      grid-column: 1/-1;
+      flex-direction: row !important;
+      justify-content: center;
+      gap: 16px !important;
+      padding: 18px 20px !important
+    }
+
+    .ix-info {
+      padding: 0 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .ix-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--green);
+      font-size: 15px;
+      font-weight: 600
+    }
+
+    .ix-row:active {
+      background: var(--green);
+      color: var(--bg)
+    }
+  </style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-eye">Valencia · Lebanese Cuisine</div>
+<div class="hero-logo">B05</div>
+<div class="hero-sub">Authentic flavours from Lebanon</div>
+</div>
+<div class="lang"><a class="lb on" href="menuUS.html">🇬🇧 EN</a><a class="lb" href="menuFR.html">🇫🇷 FR</a><a class="lb" href="menuES.html">🇪🇸 ES</a><a class="lb" href="https://b05-valencia.github.io/Discover-B05/discover-b05.html">📸 Photos</a><a class="lb" href="drink.html">🍷 Drinks</a></div>
+<div class="wrap">
+<div class="allrg"><strong>Lebanese Cuisine</strong><br/>Prepared daily with fresh ingredients and Spanish extra virgin olive oil. Our cuisine features carefully selected white veal and free-range chicken, naturally raised and fed to deliver exceptional quality, tenderness and flavour.</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">Cold Mezze</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-items">
+<div class="it">
+<div class="it-row"><span class="it-name">Classic Hummus</span><span class="it-price">11 </span></div>
+<div class="it-desc">Slowly cooked chickpea purée blended with tahini, fresh garlic, lemon juice, and a subtle hint of cumin.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Hummus Talía</span><span class="it-price">13 </span></div>
+<div class="it-desc">Blended with fresh basil, pistachios, and herb-infused olive oil.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Muhammara</span><span class="it-price">13 </span></div>
+<div class="it-desc">Roasted red pepper dip with walnuts, pistachios, pomegranate molasses, and extra virgin olive oil.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Aubergine</span><span class="it-price">12 </span></div>
+<div class="it-desc">Roasted aubergine purée with lemon, tahini, garlic, olive oil, and pomegranate molasses.</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">Salad</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-items">
+<div class="it">
+<div class="it-row"><span class="it-name">Fattoush</span><span class="it-price">13 </span></div>
+<div class="it-desc">Crisp lettuce, tomato, cucumber, radish, toasted Lebanese bread, olive oil, lemon, and sumac.</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">Hot Mezze</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-items">
+<div class="it">
+<div class="it-row"><span class="it-name">Falafel</span><span class="it-price">12 </span></div>
+<div class="it-desc">Crispy chickpea falafel with onion, garlic, and fresh parsley, 5 pcs.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Lebanese Bread</span><span class="it-price">2 </span></div>
+<div class="it-desc"></div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Kebbe</span><span class="it-price">11 </span></div>
+<div class="it-desc">Crispy croquettes of premium white veal and bulgur wheat, golden on the outside and tender within. Served with homemade yogurt and a hint of mint.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Cheese Rolls</span><span class="it-price">11 </span></div>
+<div class="it-desc">Crisp cheese pastries filled with feta and mozzarella, scented with nigella, 6 pcs.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Stuffed Vine Leaves</span><span class="it-price">12 </span></div>
+<div class="it-desc">Homemade vine leaves filled with rice, tomato, onion, and a hint of lemon, 6 pcs.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Batata Harra</span><span class="it-price">12 </span></div>
+<div class="it-desc">Golden potatoes sautéed with garlic, fresh coriander, lemon, and a touch of sweet paprika.</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">Mains &amp; Grills</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-note">Volcanic stone · Lebanese spices</div>
+<div class="sec-items">
+<div class="it">
+<div class="it-row"><span class="it-name">Vegetarian Plate</span><span class="it-price">28 </span></div>
+<div class="it-desc">Hummus, smoked aubergine dip, and aromatic Lebanese rice, served with falafel, stuffed vine leaves, a spinach pastry, and a cheese roll. Accompanied by a mixed salad and homemade vinaigrette.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Taouk</span><span class="it-price">23 </span></div>
+<div class="it-desc">230 g free-range chicken, marinated in Lebanese spices and grilled over volcanic stone. Served with hummus, seasonal salad, house vinaigrette, and traditional Lebanese garlic sauce.</div>
+</div>
+<div class="it">
+<div class="extras-tt">⭐ Chef’s Recommendation</div>
+<div class="it-row"><span class="it-name">Mixed Grill To Share</span><span class="it-price">52 </span></div>
+<div class="it-desc">Four skewers of marinated white veal and free-range chicken (460 g), grilled over volcanic stone and served with smoked aubergine, Lebanese salad, golden potato wedges, Lebanese bread, and house-made garlic and chimichurri sauces.</div>
+</div>
+<div class="extras">
+<div class="extras-tt">Extra Skewer</div>
+<div class="extras-g">
+<div class="ex"><span class="ex-n">Taouk (Free-Range Chicken)</span><span class="ex-p">9 </span></div>
+<div class="ex"><span class="ex-n">Mechwi (White Veal)</span><span class="ex-p">13 </span></div>
+</div>
+</div>
+<div class="extras">
+<div class="extras-tt">Side Dishes · 6  each</div>
+<div class="extras-g">
+<div class="ex"><span class="ex-n">Hummus</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Aubergine</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Potato Wedges</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Lebanese Rice</span><span class="ex-p">6 </span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">To Share</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-items">
+<div class="sec-note">Includes a glass of house wine or beer</div>
+<div class="exp">
+<div class="exp-badge">Signature</div>
+<div class="exp-name">Complete Mezze</div>
+<div class="exp-price">42  / person</div>
+<div class="exp-sep"></div>
+<div class="exp-body"><strong>Cold Mezze</strong> · Hummus · Aubergine · Muhammara<br/><strong>Hot Mezze</strong> · Kebbe · Stuffed Vine Leaves · Meat Hand Pie · Cheese Hand Pie · Spinach Hand Pie<br/><strong>Salad</strong> · Lebanese Fattoush<br/><strong>BBQ Taouk &amp; Mechwi</strong> · 220 g of premium white veal · 220 g of traditional free-range chicken · Carefully marinated in Lebanese spices and flame-grilled over volcanic stone<br/><strong>Includes</strong> · Garlic and chimichurri sauce · Potato wedges</div>
+</div>
+<div class="exp">
+<div class="exp-badge">Discovery</div>
+<div class="exp-name">Lebanese Experience</div>
+<div class="exp-price">33  / person</div>
+<div class="exp-sep"></div>
+<div class="exp-body"><strong>Cold Mezze</strong> · Hummus · Aubergine<br/><strong>Hot Mezze</strong> · Falafel · Stuffed Vine Leaves · Meat Hand Pie · Cheese Hand Pie · Spinach Hand Pie<br/><strong>Salad</strong> · Fresh salad with house vinaigrette<br/><strong>BBQ Taouk</strong> · 220 g of traditional free-range chicken, carefully marinated in Lebanese spices and flame-grilled over volcanic stone<br/><strong>Includes</strong> · Traditional Lebanese Garlic Sauce · Potato wedges</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd">
+<div class="sec-ln"></div>
+<div class="sec-tt">Dessert</div>
+<div class="sec-ln"></div>
+</div>
+<div class="sec-items">
+<div class="it">
+<div class="it-row"><span class="it-name">Baklava · 2 pcs.</span><span class="it-price">7 </span></div>
+<div class="it-desc">Crisp filo pastry, honey and pistachio.</div>
+</div>
+<div class="it">
+<div class="it-row"><span class="it-name">Knafeh B05</span><span class="it-price">7 </span></div>
+<div class="it-desc">Freshly baked to order (15 min).</div>
+</div>
+</div>
+</div>
+<div class="allrg"><strong>⚠ Important:</strong> All our dishes contain nuts and sesame.<br/>If you have any allergies, please inform our staff.</div>
+<div class="foot">
+<div class="foot-btns">
+<a class="foot-wa" href="https://wa.me/34642914623"><svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg> Reserve a table</a>
+<a class="foot-map" href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">📍 Find us</a>
+</div>
+<div class="foot-copy">B05 · Lebanese Kitchen · Valencia</div>
+</div>
+</div>
+</body>
+</html>

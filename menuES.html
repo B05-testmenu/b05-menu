@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport"/>
+<meta content="#3A5C1E" name="theme-color"/>
+<title>B05 — Menú · Cocina Libanesa Valencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#F1F1E6;
+  --bg2:#EAEADB;
+  --bg3:#E2E2D2;
+  --border:#C8C8AA;
+  --green:#3A5C1E;
+  --green-dk:#2A4414;
+  --green-lt:#567A2E;
+  --muted:#7A8A65;
+  --muted2:#9AAA88;
+  --gold:#C8A84A;
+  --f:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ── HERO ── */
+.hero{background:var(--green);padding:52px 24px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-eye{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(241,241,230,0.4);margin-bottom:16px;font-weight:600}
+.hero-logo{font-size:96px;font-weight:800;color:var(--bg);line-height:1;letter-spacing:-4px;margin-bottom:10px}
+.hero-sub{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.55);padding-bottom:16px}
+
+/* ── LANG BAR ── */
+.lang{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:200}
+.lb{font-family:var(--f);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 14px;border-radius:30px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;text-decoration:none;transition:all .18s}
+.lb.on,.lb:hover{background:var(--green);color:var(--bg);border-color:var(--green)}
+
+/* ── CONTENT ── */
+.wrap{max-width:620px;margin:0 auto;padding:0 0 100px}
+
+/* ── SECTION ── */
+.sec{padding:40px 20px 0}
+.sec-hd{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.sec-ln{flex:1;height:1px;background:var(--border)}
+.sec-tt{font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--green);white-space:nowrap}
+.sec-note{font-size:12px;font-style:italic;color:var(--muted);text-align:center;margin-bottom:20px;margin-top:4px}
+.sec-items{margin-top:16px}
+
+/* ── ITEM ── */
+.it{padding:16px 0;border-bottom:1px solid var(--border)}
+.it:last-child{border-bottom:none}
+.it-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px}
+.it-name{font-size:18px;font-weight:600;color:var(--green);line-height:1.15;flex:1}
+.it-price{font-size:16px;font-weight:300;color:var(--green-lt);white-space:nowrap;flex-shrink:0}
+.it-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65}
+
+/* ── VARIANTS ── */
+.vars{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.var{background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.var-l{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.3px}
+.var-p{font-size:17px;font-weight:600;color:var(--green)}
+
+/* ── EXTRAS BOX ── */
+.extras{background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;margin:16px 0}
+.extras-tt{font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--muted2);margin-bottom:12px}
+.extras-g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ex{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.ex-n{color:var(--green);font-weight:400}
+.ex-p{color:var(--green-lt);font-weight:600}
+
+/* ── EXPERIENCE CARDS ── */
+.exp{background:var(--green);border-radius:16px;padding:24px;margin-bottom:14px;position:relative;overflow:hidden}
+.exp::before{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:rgba(241,241,230,0.15)}
+.exp-badge{display:inline-block;background:rgba(241,241,230,0.12);border:1px solid rgba(241,241,230,0.2);border-radius:20px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(241,241,230,0.5);padding:4px 10px;margin-bottom:12px}
+.exp-name{font-size:22px;font-weight:700;color:var(--bg);line-height:1.1;margin-bottom:4px}
+.exp-price{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.5);margin-bottom:18px}
+.exp-sep{height:1px;background:rgba(241,241,230,0.12);margin-bottom:18px}
+.exp-body{font-size:13px;font-weight:300;color:rgba(241,241,230,0.75);line-height:2}
+.exp-body strong{color:var(--bg);font-weight:700}
+
+/* ── TAPAS NOTE ── */
+.tapas-banner{background:var(--green-dk);color:var(--bg);text-align:center;padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:.3px}
+.tapas-banner span{display:block;font-size:11px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.55);margin-top:3px}
+
+/* ── DRINK ITEMS ── */
+.dk{padding:12px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dk:last-child{border-bottom:none}
+.dk-n{font-size:15px;font-weight:500;color:var(--green);flex:1}
+.dk-d{font-size:11px;color:var(--muted);margin-top:2px}
+.dk-p{font-size:14px;font-weight:600;color:var(--green-lt);white-space:nowrap}
+
+/* ── ALLERGEN ── */
+.allrg{margin:32px 20px 0;padding:14px 18px;border:1.5px solid #C8A070;border-radius:10px;background:#FAF0E0;font-size:12px;color:#8A5018;line-height:1.7;text-align:center}
+.allrg strong{font-weight:700}
+
+/* ── FOOTER ── */
+.foot{padding:32px 20px;text-align:center;border-top:1px solid var(--border);margin-top:40px;background:var(--bg2)}
+.foot-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.foot-wa{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:14px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.3px}
+.foot-map{display:inline-flex;align-items:center;gap:8px;color:var(--green);text-decoration:none;font-size:14px;font-weight:700;padding:14px 24px;border:2px solid var(--green);border-radius:50px}
+.foot-copy{font-size:11px;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── INDEX ── */
+.ix-hero{background:var(--green);padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden}
+.ix-hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:28px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.ix-logo{font-size:110px;font-weight:800;color:var(--bg);line-height:1;letter-spacing:-5px}
+.ix-sub{font-size:14px;font-weight:300;font-style:italic;color:rgba(241,241,230,0.5);margin-top:8px;padding-bottom:20px}
+.ix-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:28px 20px 16px}
+.ix-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;text-decoration:none;color:var(--green);display:flex;flex-direction:column;align-items:center;gap:8px;transition:all .2s}
+.ix-card:active{background:var(--green);color:var(--bg);border-color:var(--green)}
+.ix-card-flag{font-size:34px}
+.ix-card-name{font-size:17px;font-weight:700;line-height:1.1}
+.ix-card-sub{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.ix-card:active .ix-card-sub{color:rgba(241,241,230,0.55)}
+.ix-full{grid-column:1/-1;flex-direction:row!important;justify-content:center;gap:16px!important;padding:18px 20px!important}
+.ix-info{padding:0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.ix-row{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;text-decoration:none;color:var(--green);font-size:15px;font-weight:600}
+.ix-row:active{background:var(--green);color:var(--bg)}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-eye">Valencia · Cocina Libanesa</div>
+<div class="hero-logo">B05</div>
+<div class="hero-sub">Sabores auténticos del Líbano</div>
+</div>
+<div class="lang"><a class="lb" href="menuUS.html">🇬🇧 EN</a><a class="lb" href="menuFR.html">🇫🇷 FR</a><a class="lb on" href="menuES.html">🇪🇸 ES</a><a class="lb" href="https://b05-valencia.github.io/Discover-B05/discover-b05.html">📸 Photos</a><a class="lb" href="drink.html">🍷 Drinks</a></div>
+<div class="wrap">
+<div class="allrg"><strong>Cocina Libanesa</strong><br/>Todos nuestros platos se elaboran con ingredientes frescos y aceite de oliva virgen extra de España. Nuestras carnes son exclusivamente de ternera blanca seleccionada, mientras que nuestro pollo es de corral, criado en libertad y alimentado de forma natural para garantizar la máxima calidad y sabor.</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezze Frío</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+<div class="it"><div class="it-row"><span class="it-name">Hummus Clásico</span><span class="it-price">11 </span></div><div class="it-desc">Crema tradicional libanesa de garbanzos cocidos lentamente, con tahini, ajo, limón y toque de comino.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Hummus Talía</span><span class="it-price">13 </span></div><div class="it-desc">Con albahaca fresca, pistacho y aceite infusionado.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Muhammara</span><span class="it-price">13 </span></div><div class="it-desc">Crema de pimiento rojo asado y granada, con nueces, pistachos y melaza de granada.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Berenjena</span><span class="it-price">12 </span></div><div class="it-desc">Crema de berenjena asada con limón, tahini, ajo, aceite de oliva y melaza de granada.</div></div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Ensalada</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+<div class="it"><div class="it-row"><span class="it-name">Fattoush</span><span class="it-price">13 </span></div><div class="it-desc">Ensalada tradicional libanesa de lechuga, tomate, pepino y rábano, aliñada con limón, pan crujiente, aceite de oliva y zumaque.</div></div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezze Caliente</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+<div class="it"><div class="it-row"><span class="it-name">Falafel</span><span class="it-price">12 </span></div><div class="it-desc">Falafel tradicional de garbanzos molidos con cebolla, ajo y perejil fresco, 5 uds.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Pan Libanés</span><span class="it-price">2 </span></div><div class="it-desc">El pan no consumido puede llevarse.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Kebbe</span><span class="it-price">11 </span></div><div class="it-desc">Croquetas artesanales de carne de ternera blanca y bulgur, crujientes por fuera y tiernas por dentro. Acompañadas de yogur casero cremoso con un toque de menta.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Raka Queso</span><span class="it-price">11 </span></div><div class="it-desc">Crujientes de queso rellenos de feta y mozzarella, aromatizados con nigella, 6 uds.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Hojas de Parra</span><span class="it-price">12 </span></div><div class="it-desc">Rellenas de arroz, tomate, cebolla y toque de limón, elaboradas en casa, 6 uds.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Batata Harra</span><span class="it-price">12 </span></div><div class="it-desc">Patatas doradas salteadas con ajo, cilantro fresco, limón y toque de pimentón dulce.</div></div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Platos y Parrilla</div><div class="sec-ln"></div></div>
+<div class="sec-note">Piedra volcánica · Especias libanesas</div>
+<div class="sec-items">
+<div class="it"><div class="it-row"><span class="it-name">Plato Vegetariano</span><span class="it-price">28 </span></div><div class="it-desc">Hummus, berenjena y arroz libanés aromático, con falafel, hojas de parra, empanada artesanal de espinaca y rollito de queso. Con ensalada mixta y vinagreta casera.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Plato Taouk</span><span class="it-price">23 </span></div><div class="it-desc">230 g de pollo de corral premium marinado en especias libanesas y nuestra marinada exclusiva, sellado sobre piedra volcánica. Servido con hummus, ensalada fresca con vinagreta casera y salsa de ajo libanesa.</div></div>
+<div class="it">
+<div class="extras-tt">⭐ Recomendación del Chef</div>
+<div class="it-row"><span class="it-name">Parrilla Mixta para Dos</span><span class="it-price">52 </span></div>
+<div class="it-desc">460 g de carne a la parrilla para compartir. Cuatro brochetas de pollo marinado y mechwi de ternera blanca, acompañadas de berenjena, ensalada libanesa fresca, patatas wedges doradas, pan libanés y salsas caseras de ajo y chimichurri.</div>
+</div>
+<div class="extras">
+<div class="extras-tt">Brocheta adicional</div>
+<div class="extras-g">
+<div class="ex"><span class="ex-n">Taouk</span><span class="ex-p">9 </span></div>
+<div class="ex"><span class="ex-n">Mechwi</span><span class="ex-p">13 </span></div>
+</div>
+</div>
+<div class="extras">
+<div class="extras-tt">Acompañamientos · 6 </div>
+<div class="extras-g">
+<div class="ex"><span class="ex-n">Hummus</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Berenjena</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Patatas Wedges</span><span class="ex-p">6 </span></div>
+<div class="ex"><span class="ex-n">Arroz Libanés</span><span class="ex-p">6 </span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">A Compartir</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+<div class="sec-note">Comprende una copa de vino o una cerveza</div>
+<div class="exp">
+<div class="exp-badge">Signature</div>
+<div class="exp-name">Mezza</div>
+<div class="exp-price">42  / persona</div>
+<div class="exp-sep"></div>
+<div class="exp-body"><strong>Mezza frío</strong> · Hummus · Berenjena · Muhammara<br/><strong>Mezza caliente</strong> · Kebbe · Hojas de Parra · Empanada Carne · Empanada Espinaca · Empanada Queso<br/><strong>Ensalada</strong> · Fattoush libanés<br/><strong>Parrilla mixta</strong> · Taouk, pollo de corral 230 g · Mechwi, ternera blanca 230 g<br/><strong>Incluye</strong> · Salsa alioli · Salsa libanesa · Patatas wedges</div>
+</div>
+<div class="exp">
+<div class="exp-badge">Descubrimiento</div>
+<div class="exp-name">Experiencia</div>
+<div class="exp-price">33  / persona</div>
+<div class="exp-sep"></div>
+<div class="exp-body"><strong>Mezza frío</strong> · Hummus · Berenjena<br/><strong>Mezza caliente</strong> · Falafel · Hojas de Parra · Empanada Carne · Empanada Queso · Empanada Espinaca<br/><strong>Ensalada</strong> · Ensalada fresca con vinagreta casera<br/><strong>BBQ</strong> · Pollo al estilo libanés 230 g<br/><strong>Incluye</strong> · Salsa especial de alioli · Patatas wedges</div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Postres</div><div class="sec-ln"></div></div>
+<div class="sec-items">
+<div class="it"><div class="it-row"><span class="it-name">Baklava · 2 uds.</span><span class="it-price">7 </span></div><div class="it-desc">Hojaldre crujiente con miel y pistacho.</div></div>
+<div class="it"><div class="it-row"><span class="it-name">Knafeh B05</span><span class="it-price">7 </span></div><div class="it-desc">Artesanal · Recién horneado (15 min).</div></div>
+</div>
+</div>
+<div class="allrg"><strong>⚠ Importante:</strong> Todos nuestros platos contienen frutos secos y sésamo.<br/>Si padece alguna alergia, informe a nuestro personal.</div>
+<div class="foot">
+<div class="foot-btns">
+<a class="foot-wa" href="https://wa.me/34642914623">Reservar mesa</a>
+<a class="foot-map" href="https://maps.app.goo.gl/b5h1M2omhgeXZ7oa9" target="_blank">📍 Encuéntranos</a>
+</div>
+<div class="foot-copy">B05 · Lebanese Kitchen · Valencia</div>
+</div>
+</div>
+</body>
+</html>
