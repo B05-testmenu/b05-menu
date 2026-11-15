@@ -120,6 +120,10 @@ body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100
 .ix-info{padding:0 20px 20px;display:flex;flex-direction:column;gap:8px}
 .ix-row{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;text-decoration:none;color:var(--green);font-size:15px;font-weight:600}
 .ix-row:active{background:var(--green);color:var(--bg)}
+
+/* Menu dish photographs */
+.dish-photo{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:var(--bg2);border-radius:12px;margin:0 0 14px}
+@media(max-width:480px){.dish-photo{max-height:340px}}
 </style>
 </head>
 <body>
@@ -135,9 +139,9 @@ body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100
 <div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezze Frío</div><div class="sec-ln"></div></div>
 <div class="sec-items">
 <div class="it"><div class="it-row"><span class="it-name">Hummus Clásico</span><span class="it-price">11 </span></div><div class="it-desc">Crema tradicional libanesa de garbanzos cocidos lentamente, con tahini, ajo, limón y toque de comino.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Hummus Talía</span><span class="it-price">13 </span></div><div class="it-desc">Con albahaca fresca, pistacho y aceite infusionado.</div></div>
+<div class="it"><img class="dish-photo" src="hommus%20Talia.jpg" alt="Hummus Talía" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Hummus Talía</span><span class="it-price">13 </span></div><div class="it-desc">Con albahaca fresca, pistacho y aceite infusionado.</div></div>
 <div class="it"><div class="it-row"><span class="it-name">Muhammara</span><span class="it-price">13 </span></div><div class="it-desc">Crema de pimiento rojo asado y granada, con nueces, pistachos y melaza de granada.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Berenjena</span><span class="it-price">12 </span></div><div class="it-desc">Crema de berenjena asada con limón, tahini, ajo, aceite de oliva y melaza de granada.</div></div>
+<div class="it"><img class="dish-photo" src="babaganoug.jpg" alt="Berenjena" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Berenjena</span><span class="it-price">12 </span></div><div class="it-desc">Crema de berenjena asada con limón, tahini, ajo, aceite de oliva y melaza de granada.</div></div>
 </div>
 </div>
 <div class="sec">
@@ -149,11 +153,11 @@ body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100
 <div class="sec">
 <div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Mezze Caliente</div><div class="sec-ln"></div></div>
 <div class="sec-items">
-<div class="it"><div class="it-row"><span class="it-name">Falafel</span><span class="it-price">12 </span></div><div class="it-desc">Falafel tradicional de garbanzos molidos con cebolla, ajo y perejil fresco, 5 uds.</div></div>
+<div class="it"><img class="dish-photo" src="falafel.jpg" alt="Falafel" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Falafel</span><span class="it-price">12 </span></div><div class="it-desc">Falafel tradicional de garbanzos molidos con cebolla, ajo y perejil fresco, 5 uds.</div></div>
 <div class="it"><div class="it-row"><span class="it-name">Pan Libanés</span><span class="it-price">2 </span></div><div class="it-desc">El pan no consumido puede llevarse.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Kebbe</span><span class="it-price">11 </span></div><div class="it-desc">Croquetas artesanales de carne de ternera blanca y bulgur, crujientes por fuera y tiernas por dentro. Acompañadas de yogur casero cremoso con un toque de menta.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Raka Queso</span><span class="it-price">11 </span></div><div class="it-desc">Crujientes de queso rellenos de feta y mozzarella, aromatizados con nigella, 6 uds.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Hojas de Parra</span><span class="it-price">12 </span></div><div class="it-desc">Rellenas de arroz, tomate, cebolla y toque de limón, elaboradas en casa, 6 uds.</div></div>
+<div class="it"><img class="dish-photo" src="kebbe.jpg" alt="Kebbe" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Kebbe</span><span class="it-price">11 </span></div><div class="it-desc">Croquetas artesanales de carne de ternera blanca y bulgur, crujientes por fuera y tiernas por dentro. Acompañadas de yogur casero cremoso con un toque de menta.</div></div>
+<div class="it"><img class="dish-photo" src="raka-family.jpeg" alt="Raka Queso" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Raka Queso</span><span class="it-price">11 </span></div><div class="it-desc">Crujientes de queso rellenos de feta y mozzarella, aromatizados con nigella, 6 uds.</div></div>
+<div class="it"><img class="dish-photo" src="horra%20parra.jpg" alt="Hojas de Parra" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Hojas de Parra</span><span class="it-price">12 </span></div><div class="it-desc">Rellenas de arroz, tomate, cebolla y toque de limón, elaboradas en casa, 6 uds.</div></div>
 <div class="it"><div class="it-row"><span class="it-name">Batata Harra</span><span class="it-price">12 </span></div><div class="it-desc">Patatas doradas salteadas con ajo, cilantro fresco, limón y toque de pimentón dulce.</div></div>
 </div>
 </div>
@@ -161,9 +165,9 @@ body{background:var(--bg);color:var(--green);font-family:var(--f);min-height:100
 <div class="sec-hd"><div class="sec-ln"></div><div class="sec-tt">Platos y Parrilla</div><div class="sec-ln"></div></div>
 <div class="sec-note">Piedra volcánica · Especias libanesas</div>
 <div class="sec-items">
-<div class="it"><div class="it-row"><span class="it-name">Plato Vegetariano</span><span class="it-price">28 </span></div><div class="it-desc">Hummus, berenjena y arroz libanés aromático, con falafel, hojas de parra, empanada artesanal de espinaca y rollito de queso. Con ensalada mixta y vinagreta casera.</div></div>
-<div class="it"><div class="it-row"><span class="it-name">Plato Taouk</span><span class="it-price">23 </span></div><div class="it-desc">230 g de pollo de corral premium marinado en especias libanesas y nuestra marinada exclusiva, sellado sobre piedra volcánica. Servido con hummus, ensalada fresca con vinagreta casera y salsa de ajo libanesa.</div></div>
-<div class="it">
+<div class="it"><img class="dish-photo" src="vegetariano.jpg" alt="Plato Vegetariano" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Plato Vegetariano</span><span class="it-price">28 </span></div><div class="it-desc">Hummus, berenjena y arroz libanés aromático, con falafel, hojas de parra, empanada artesanal de espinaca y rollito de queso. Con ensalada mixta y vinagreta casera.</div></div>
+<div class="it"><img class="dish-photo" src="toaouk4.jpg" alt="Plato Taouk" loading="lazy" decoding="async"/><div class="it-row"><span class="it-name">Plato Taouk</span><span class="it-price">23 </span></div><div class="it-desc">230 g de pollo de corral premium marinado en especias libanesas y nuestra marinada exclusiva, sellado sobre piedra volcánica. Servido con hummus, ensalada fresca con vinagreta casera y salsa de ajo libanesa.</div></div>
+<div class="it"><img class="dish-photo" src="mixed-grill1.jpg" alt="Parrilla Mixta para Dos" loading="lazy" decoding="async"/>
 <div class="extras-tt">⭐ Recomendación del Chef</div>
 <div class="it-row"><span class="it-name">Parrilla Mixta para Dos</span><span class="it-price">52 </span></div>
 <div class="it-desc">460 g de carne a la parrilla para compartir. Cuatro brochetas de pollo marinado y mechwi de ternera blanca, acompañadas de berenjena, ensalada libanesa fresca, patatas wedges doradas, pan libanés y salsas caseras de ajo y chimichurri.</div>
